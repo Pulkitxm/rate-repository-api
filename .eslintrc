@@ -1,0 +1,13 @@
+{
+  "extends": "eslint:recommended",
+  "parser": "@babel/eslint-parser",
+  "env": {
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "plugins": ["jest"]
+}

@@ -1,0 +1,76 @@
+{
+  "name": "rate-repository-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r esm ./src/index.js",
+    "start:dev": "nodemon -r esm ./src/index.js",
+    "lint": "eslint ./src",
+    "test": "jest .",
+    "migrate:make": "knex migrate:make",
+    "migrate:latest": "knex migrate:latest",
+    "build": "npm run migrate:latest",
+    "seed:make": "knex seed:make",
+    "seed:run": "knex seed:run"
+  },
+  "lint-staged": {
+    "src/**/*.js": "eslint",
+    "*.{js,json,css,md}": "prettier --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kaltsoon/rate-repository-api.git"
+  },
+  "author": "Kalle Ilves",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kaltsoon/rate-repository-api/issues"
+  },
+  "homepage": "https://github.com/Kaltsoon/rate-repository-api#readme",
+  "dependencies": {
+    "@koa/cors": "^3.0.0",
+    "apollo-server": "^3.3.0",
+    "apollo-server-core": "^3.3.0",
+    "apollo-server-koa": "^3.3.0",
+    "axios": "^0.24.0",
+    "bcrypt": "^5.0.0",
+    "dataloader": "^2.0.0",
+    "date-fns": "^2.9.0",
+    "dotenv": "^11.0.0",
+    "es6-error": "^4.1.1",
+    "esm": "^3.2.25",
+    "graphql": "^16.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.95.15",
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-morgan": "^1.0.1",
+    "koa-router": "^10.0.0",
+    "lodash": "^4.17.15",
+    "lru-cache": "^6.0.0",
+    "objection": "^3.0.1",
+    "sqlite3": "^5.0.2",
+    "through2": "^4.0.2",
+    "uuid": "^8.3.2",
+    "winston": "^3.2.1",
+    "yup": "^0.32.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/eslint-parser": "^7.16.5",
+    "@babel/preset-env": "^7.8.4",
+    "eslint": "^8.6.0",
+    "eslint-plugin-jest": "^25.3.4",
+    "husky": "^4.2.3",
+    "jest": "^27.4.7",
+    "lint-staged": "^10.0.7",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1"
+  }
+}
